@@ -4,10 +4,8 @@ namespace MagicSunset.Data
 {
     public class Dishkind
     {
-        public int id { get; set; }
-        public string appetizers { get; set; }
-        public string maindish { get; set; }    
-        public string dessert { get; set; }
+        public int Id { get; set; }
+        public string FoodName { get; set; }
 
         
 

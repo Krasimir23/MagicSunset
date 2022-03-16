@@ -4,11 +4,8 @@ namespace MagicSunset.Data
 {
     public class Drinkkind
     {
-        public int id  { get; set; }
-        public string alchohol { get; set; }
-        public string nonalchohol { get; set; }   
-        public string carbonated  { get; set; }
-        public string juice { get; set; }
+        public int Id  { get; set; }
+        public string DrinkKind { get; set; }
 
        
     }

@@ -8,9 +8,8 @@ namespace MagicSunset.Data
     public class Order
     {
         public int id { get; set; }
-        public int productId { get; set; }
-        public Dishess Dish { get; set; }
-        public Drinks Drink { get; set; }
+        public int ReservationId { get; set; }
+        public Reservations Reser { get; set; }
         public int UserId { get; set; }
         public Users User { get; set; }
         public DateTime OrderedOn { get; set; }
