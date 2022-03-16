@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MagicSunset.Data
 {
@@ -9,7 +10,10 @@ namespace MagicSunset.Data
         public string dishkind { get; set; }
         public string allergens { get; set; }   
         public int gram { get; set; }
-        public double  price { get; set; }  
+
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal  price { get; set; }  
+        public Food foodkind { get; set; }
         
         public ICollection<Order> Orders { get; set; }  
     }
