@@ -10,6 +10,6 @@ namespace MagicSunset.Data
         public string carbonated  { get; set; }
         public string juice { get; set; }
 
-        public  ICollection<Drinkkind> dkind { get; set; }
+       
     }
 }

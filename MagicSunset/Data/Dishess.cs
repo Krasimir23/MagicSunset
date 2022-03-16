@@ -1,4 +1,6 @@
-﻿namespace MagicSunset.Data
+﻿using System.Collections.Generic;
+
+namespace MagicSunset.Data
 {
     public class Dishess
     {
@@ -8,7 +10,7 @@
         public string allergens { get; set; }   
         public int gram { get; set; }
         public double  price { get; set; }  
-        public Dishkind Dishkind { get; set; }
-        public Allergens allergen { get; set; }    
+        
+        public ICollection<Order> Orders { get; set; }  
     }
 }

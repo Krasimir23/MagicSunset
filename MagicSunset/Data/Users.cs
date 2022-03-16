@@ -1,14 +1,16 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.Collections.Generic;
 
 namespace MagicSunset.Data
 {
     public class Users : IdentityUser
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string lastname { get; set; }
-        public int number { get; set; }
-        public int date { get; set; }
+        
+        public string FullName { get; set; }
+        public Roles Role { get; set; }
+        public ICollection<Order> Orders { get; set; }
+        public ICollection<Reservations> Res { get; set; }
+        
 
 
     }

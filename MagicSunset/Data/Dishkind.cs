@@ -9,7 +9,7 @@ namespace MagicSunset.Data
         public string maindish { get; set; }    
         public string dessert { get; set; }
 
-        public  ICollection<Dishkind> Dishes { get; set; }
+        
 
     }
 }

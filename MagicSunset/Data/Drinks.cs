@@ -1,4 +1,7 @@
-﻿namespace MagicSunset.Data
+﻿using System.Collections;
+using System.Collections.Generic;
+
+namespace MagicSunset.Data
 {
     public class Drinks
     {
@@ -8,6 +11,6 @@
         public string description { get; set; }
         public int size { get; set; }   
         public double price { get; set; }   
-        public Dishkind dkint { get; set; } 
+        public ICollection<Order> Orders { get; set; }
     }
 }

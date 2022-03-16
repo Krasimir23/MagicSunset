@@ -11,7 +11,5 @@ namespace MagicSunset.Data
         public string peanut { get; set; }
         public string wheat { get; set; }
 
-        public  ICollection<Allergens> allergens { get; set; }
-
     }
 }
