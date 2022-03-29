@@ -19,6 +19,97 @@ namespace MagicSunset.Data.Migrations
                 .HasAnnotation("ProductVersion", "5.0.13")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("MagicSunset.Data.Dishess", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("DishekindId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Dishkind")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Dishname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Gram")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DishekindId");
+
+                    b.ToTable("Dishess");
+                });
+
+            modelBuilder.Entity("MagicSunset.Data.Dishkind", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("FoodName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Dishkind");
+                });
+
+            modelBuilder.Entity("MagicSunset.Data.Drinkkind", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("DrinkKind")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Drinkkind");
+                });
+
+            modelBuilder.Entity("MagicSunset.Data.Drinks", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DrinkKindId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DrinkindId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("drinkname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("price")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<int>("size")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("DrinkKindId");
+
+                    b.ToTable("Drinks");
+                });
+
             modelBuilder.Entity("MagicSunset.Data.Order", b =>
                 {
                     b.Property<int>("id")
@@ -45,6 +136,30 @@ namespace MagicSunset.Data.Migrations
                     b.HasIndex("UserId1");
 
                     b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("MagicSunset.Data.Reservations", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Date")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Guests")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Hour")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Table")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Reservations");
                 });
 
             modelBuilder.Entity("MagicSunset.Data.Tables", b =>
@@ -269,6 +384,24 @@ namespace MagicSunset.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("MagicSunset.Data.Dishess", b =>
+                {
+                    b.HasOne("MagicSunset.Data.Dishkind", "Dishekind")
+                        .WithMany()
+                        .HasForeignKey("DishekindId");
+
+                    b.Navigation("Dishekind");
+                });
+
+            modelBuilder.Entity("MagicSunset.Data.Drinks", b =>
+                {
+                    b.HasOne("MagicSunset.Data.Drinkkind", "DrinkKind")
+                        .WithMany()
+                        .HasForeignKey("DrinkKindId");
+
+                    b.Navigation("DrinkKind");
                 });
 
             modelBuilder.Entity("MagicSunset.Data.Order", b =>

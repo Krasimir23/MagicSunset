@@ -9,7 +9,7 @@ namespace MagicSunset.Data
     {
         public int id { get; set; }
         public int TablesId { get; set; }
-        public Tables Tab { get; set; }
+        public Tables Tables { get; set; }
         public int UserId { get; set; }
         public Users User { get; set; }
         public DateTime OrderedOn { get; set; }
