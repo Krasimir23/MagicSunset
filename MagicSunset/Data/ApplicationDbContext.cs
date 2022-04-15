@@ -13,15 +13,12 @@ namespace MagicSunset.Data
             : base(options)
         {
         }
-        //public DbSet<MagicSunset.Data.Dishess> Dish { get; set; }
-        //public DbSet<MagicSunset.Data.Drinks> Drink { get; set; }
-        public DbSet<MagicSunset.Data.Order> Orders { get; set; }
+        
+        public DbSet<MagicSunset.Data.Reservations> Reser { get; set; }
         public DbSet<MagicSunset.Data.Tables> Tables { get; set; }
-        public DbSet<MagicSunset.Data.Reservations> Reservations { get; set; }
-        public DbSet<MagicSunset.Data.Dishess> Dishess { get; set; }
-        public DbSet<MagicSunset.Data.Drinks> Drinks { get; set; }
-        public DbSet<MagicSunset.Data.Dishkind> Dishkind { get; set; }
-        public DbSet<MagicSunset.Data.Drinkkind> Drinkkind { get; set; }
+        
+        
+        
 
 
     }

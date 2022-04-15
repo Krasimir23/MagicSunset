@@ -8,7 +8,7 @@ namespace MagicSunset.Data
         
         public string FullName { get; set; }
         public Roles Role { get; set; }
-        public ICollection<Order> Orders { get; set; }
+        public ICollection<Reservations> Reser { get; set; }
        
         
 

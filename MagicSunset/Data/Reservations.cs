@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace MagicSunset.Data
 {
@@ -9,6 +10,11 @@ namespace MagicSunset.Data
         public int Hour { get; set; }   
         public int Table { get; set; }  
         public int Guests { get; set; }  
-
+        public int TablesId { get; set; }
+        public Tables Tables { get; set; }
+        public int UserId { get; set; }
+        public Users User { get; set; }
+        public DateTime OrderedOn { get; set; }
+        
     }
 }

@@ -10,6 +10,6 @@ namespace MagicSunset.Data
         public int Id { get; set; }
         public int Count { get; set; }
         public string Descr { get; set; }
-        public ICollection<Order> Orders { get; set; }
+        public ICollection<Reservations> Reser { get; set; }
     }
 }
