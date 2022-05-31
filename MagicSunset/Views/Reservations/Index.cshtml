@@ -1,0 +1,59 @@
+﻿@model IEnumerable<MagicSunset.Data.Reservations>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th colspan="2">
+                @Html.DisplayNameFor(model => model.Tables)
+            </th>
+            <th colspan="2">
+               USER @*@Html.DisplayNameFor(model => model.UserId)*@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderedOn)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Table)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Guests)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tables.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderedOn)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

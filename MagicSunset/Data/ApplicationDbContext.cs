@@ -16,6 +16,8 @@ namespace MagicSunset.Data
         
         public DbSet<MagicSunset.Data.Reservations> Reser { get; set; }
         public DbSet<MagicSunset.Data.Tables> Tables { get; set; }
+        public DbSet<MagicSunset.Data.Drinks> Drinks { get; set; }
+        public DbSet<MagicSunset.Data.Dishess> Dishess { get; set; }
         
         
         

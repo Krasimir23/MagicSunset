@@ -6,14 +6,14 @@ namespace MagicSunset.Data
 {
     public class Drinks
     {
-        public int id { get; set; } 
-        public string drinkname { get; set; }
+        public int Id { get; set; } 
+        public string Drinkname { get; set; }
         public int DrinkindId { get; set; }
         public Drinkkind DrinkKind { get; set; }
         public string Description { get; set; }
-        public int size { get; set; } 
+        public int Size { get; set; } 
         [Column(TypeName = "decimal(10,2)")]
-        public decimal price { get; set; }  
+        public decimal Price { get; set; }  
        
     }
 }
