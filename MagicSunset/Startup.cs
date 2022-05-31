@@ -33,6 +33,7 @@ namespace MagicSunset
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddDefaultIdentity<Users>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
             services.AddControllersWithViews();

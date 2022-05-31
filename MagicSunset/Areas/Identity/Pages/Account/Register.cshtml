@@ -12,15 +12,16 @@
             <h4>Create a new account.</h4>
             <hr />
             <div asp-validation-summary="All" class="text-danger"></div>
+
             <div class="form-group">
-                <label asp-for="Input.FullName"></label>
-                <input asp-for="Input.FullName" class="form-control" />
-                <span asp-validation-for="Input.FullName" class="text-danger"></span>
+                <label asp-for="Input.UserName"></label>
+                <input asp-for="Input.UserName" class="form-control" placeholder="" />
+                <span asp-validation-for="Input.UserName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Input.Role"></label>
-                <input asp-for="Input.Role" class="form-control" />
-                <span asp-validation-for="Input.Role" class="text-danger"></span>
+                <label asp-for="Input.FullName"></label>
+                <input asp-for="Input.FullName" class="form-control" placeholder="" />
+                <span asp-validation-for="Input.FullName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Input.Email"></label>
@@ -37,6 +38,13 @@
                 <input asp-for="Input.ConfirmPassword" class="form-control" />
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="Input.Role"></label>
+                <select asp-for="Input.Role"  class="form-control"> </select>
+                <span asp-validation-for="Input.Role" class="text-danger"></span>
+            </div>
+
+          
             <button type="submit" class="btn btn-primary">Register</button>
         </form>
     </div>

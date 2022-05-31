@@ -6,16 +6,24 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MagicSunset.Data;
+using MagicSunset.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MagicSunset.Controllers
 {
     public class ReservationsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<Users> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public ReservationsController(ApplicationDbContext context)
+        public ReservationsController(ApplicationDbContext context, UserManager<Users> userManager, RoleManager<IdentityRole> roleManager)
         {
             _context = context;
+            _userManager = userManager;
+            _roleManager = roleManager;
+
         }
 
         // GET: Reservations
@@ -47,8 +55,17 @@ namespace MagicSunset.Controllers
         // GET: Reservations/Create
         public IActionResult Create()
         {
-            ViewData["TablesId"] = new SelectList(_context.Tables, "Id", "Id");
-            return View();
+            ReservationVM model = new ReservationVM();
+            model.UserId = _userManager.GetUserId(User);
+            model.Tables = _context.Tables.Select(x => new SelectListItem
+            {
+                Text = x.Descr,
+                Value = x.Id.ToString(),
+                Selected = x.Id ==  model.TablesId
+            }
+              ).ToList();
+          // ViewData["TablesId"] = new SelectList(_context.Tables, "Id", "Id");
+            return View(model);
         }
 
         // POST: Reservations/Create
@@ -81,6 +98,8 @@ namespace MagicSunset.Controllers
             {
                 return NotFound();
             }
+            
+
             ViewData["TablesId"] = new SelectList(_context.Tables, "Id", "Id", reservations.TablesId);
             return View(reservations);
         }

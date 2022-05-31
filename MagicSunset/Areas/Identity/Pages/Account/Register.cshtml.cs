@@ -51,13 +51,9 @@ namespace MagicSunset.Areas.Identity.Pages.Account
             [Display(Name = "Email")]
             public string Email { get; set; }
 
-            [Display(Name = "FullName")]
-            public string FullName { get; set; }
-
-            [Display(Name = "Role")]
-            public string Role { get; set; }
-
-
+            [Required(ErrorMessage = "The field is requared!")]
+            [Display(Name = "User Name")]
+            public string UserName { get; set; }
 
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
@@ -69,6 +65,14 @@ namespace MagicSunset.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+
+            [Required(ErrorMessage = "The field is requared!")]
+            [Display(Name = "Full Name")]
+            public string FullName { get; set; }
+
+            [Required(ErrorMessage = "The field is requared!")]
+            [Display(Name = "Role")]
+            public Roles Role { get; set; }
         }
 
         public async Task OnGetAsync(string returnUrl = null)
@@ -83,11 +87,12 @@ namespace MagicSunset.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new Users { UserName = Input.FullName, Email = Input.Email };
+                var user = new Users { UserName = Input.Email, Email = Input.Email };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
+                    var result1 = await _userManager.AddToRoleAsync(user, "User");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
