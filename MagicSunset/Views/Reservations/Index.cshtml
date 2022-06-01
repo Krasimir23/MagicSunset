@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<MagicSunset.Data.Reservations>
 
 @{
-    ViewData["Title"] = "Reservations";
+    ViewData["Title"] = "Index";
 }
 
 <h1>Index</h1>
@@ -12,11 +12,17 @@
 <table class="table">
     <thead>
         <tr>
-            <th colspan="2">
+            <th>
+                @Html.DisplayNameFor(model => model.Table)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Guests)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Tables)
             </th>
-            <th colspan="2">
-               USER @*@Html.DisplayNameFor(model => model.UserId)*@
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.OrderedOn)
@@ -27,12 +33,6 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hour)
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Table)
             </td>

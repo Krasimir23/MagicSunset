@@ -9,22 +9,22 @@ using MagicSunset.Data;
 
 namespace MagicSunset.Controllers
 {
-    public class TablesController : Controller
+    public class Tables1Controller : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public TablesController(ApplicationDbContext context)
+        public Tables1Controller(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Tables
+        // GET: Tables1
         public async Task<IActionResult> Index()
         {
             return View(await _context.Tables.ToListAsync());
         }
 
-        // GET: Tables/Details/5
+        // GET: Tables1/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -42,13 +42,13 @@ namespace MagicSunset.Controllers
             return View(tables);
         }
 
-        // GET: Tables/Create
+        // GET: Tables1/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Tables/Create
+        // POST: Tables1/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -64,7 +64,7 @@ namespace MagicSunset.Controllers
             return View(tables);
         }
 
-        // GET: Tables/Edit/5
+        // GET: Tables1/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -80,7 +80,7 @@ namespace MagicSunset.Controllers
             return View(tables);
         }
 
-        // POST: Tables/Edit/5
+        // POST: Tables1/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -115,7 +115,7 @@ namespace MagicSunset.Controllers
             return View(tables);
         }
 
-        // GET: Tables/Delete/5
+        // GET: Tables1/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -133,7 +133,7 @@ namespace MagicSunset.Controllers
             return View(tables);
         }
 
-        // POST: Tables/Delete/5
+        // POST: Tables1/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
