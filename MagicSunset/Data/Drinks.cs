@@ -8,7 +8,7 @@ namespace MagicSunset.Data
     {
         public int Id { get; set; } 
         public string Drinkname { get; set; }
-        public int DrinkindId { get; set; }
+        
         public Drinkkind DrinkKind { get; set; }
         public string Description { get; set; }
         public int Size { get; set; } 

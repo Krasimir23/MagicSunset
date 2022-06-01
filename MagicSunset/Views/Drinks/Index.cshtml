@@ -1,10 +1,10 @@
-﻿@model IEnumerable<MagicSunset.Data.Reservations>
+﻿@model IEnumerable<MagicSunset.Data.Drinks>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Reservation</h1>
+<h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -13,19 +13,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Table)
+                @Html.DisplayNameFor(model => model.Drinkname)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Guests)
+                @Html.DisplayNameFor(model => model.Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Tables)
+                @Html.DisplayNameFor(model => model.Size)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UserId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.OrderedOn)
+                @Html.DisplayNameFor(model => model.Price)
             </th>
             <th></th>
         </tr>
@@ -34,19 +31,16 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Table)
+                @Html.DisplayFor(modelItem => item.Drinkname)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Guests)
+                @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Tables.Id)
+                @Html.DisplayFor(modelItem => item.Size)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UserId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OrderedOn)
+                @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

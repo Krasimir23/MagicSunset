@@ -517,3 +517,8 @@ C:\Users\Admin\Desktop\MagicSunset\MagicSunset\obj\Debug\net5.0\Razor\Views\Rese
 C:\Users\Admin\Desktop\MagicSunset\MagicSunset\obj\Debug\net5.0\Razor\Views\Reservations\Details.cshtml.g.cs
 C:\Users\Admin\Desktop\MagicSunset\MagicSunset\obj\Debug\net5.0\Razor\Views\Reservations\Edit.cshtml.g.cs
 C:\Users\Admin\Desktop\MagicSunset\MagicSunset\obj\Debug\net5.0\Razor\Views\Reservations\Index.cshtml.g.cs
+C:\Users\Admin\Desktop\MagicSunset\MagicSunset\obj\Debug\net5.0\Razor\Views\Drinks\Create.cshtml.g.cs
+C:\Users\Admin\Desktop\MagicSunset\MagicSunset\obj\Debug\net5.0\Razor\Views\Drinks\Delete.cshtml.g.cs
+C:\Users\Admin\Desktop\MagicSunset\MagicSunset\obj\Debug\net5.0\Razor\Views\Drinks\Details.cshtml.g.cs
+C:\Users\Admin\Desktop\MagicSunset\MagicSunset\obj\Debug\net5.0\Razor\Views\Drinks\Edit.cshtml.g.cs
+C:\Users\Admin\Desktop\MagicSunset\MagicSunset\obj\Debug\net5.0\Razor\Views\Drinks\Index.cshtml.g.cs
